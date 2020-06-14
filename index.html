@@ -3,73 +3,85 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Daisy</title>
+    <title>Dolphin Brother</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&amp;display=swap" rel="stylesheet"> 
+    <script src=script.js> </script>
   </head>
 
+  <body>
+    <form onclick="let randIndex = Math.floor(Math.random() * phrases.length);
+      document.getElementById('button').onclick = function() {
+      document.getElementById('text').textContent = (phrases[randIndex]);
+      document.getElementById('button').hidden = true; 
+      }
+      document.getElementById('next').onclick = function() {
+      document.getElementById('text').textContent = (phrases[randIndex]); }
+      document.getElementById('plus').onclick = function() {
+      num++;
+      elem.innerHTML = num;}
+      document.getElementById('minus').onclick = function() {
+      num--;
+      elem.innerHTML = num;}
+      
+      ">
+    
+    
+    <input class="next" type="button" id="next" value="Next" />
+    <input type="text" name="time" id="time">
+    <input type="submit" class="min" onclick="document.getElementById('time').value='60'; return false;" value = "1 min" />
+    <input type="submit"  class="onehalf" onclick="document.getElementById('time').value='90'; return false;"  value = "1.5 min" />
+    <input type="submit" class="Reset" value="Reset">
+    <input id="minus" type="button" value="-">
+    <input id="plus" type="button" value="+">
+    <div id="total">0</div>
+    <input class="button" type="button" id="button" value="Play" />
+    <div id="timer"></div>
+    <div id="text"> </div> 
+    </form>
+    
 
     
-  <body>
-    <form class="form"; onclick="let randIndex = Math.floor(Math.random() * phrases.length);
-      document.getElementById('button').onclick = function() {
-      document.getElementById('text').textContent = (phrases[randIndex]); }"> 
-    <input type="button" id="button" value="Random Daisy" />
-    <p id="text"> </p> 
-    </form>
-  
+    <script>
+      
+   
+      let timerInput = document.getElementById("time");
+      let buttonRun = document.getElementById("button")
+      let timerShow = document.getElementById("timer");
+      buttonRun.addEventListener('click', function() {
+          timeMinut = parseInt(timerInput.value) 
+      })
 
+      timer = setInterval(function () {
+      seconds = timeMinut%60
+      minutes = timeMinut/60%60
+   
+      if (timeMinut <= 0) {
+          clearInterval(timer);
+          alert("Время закончилось");
+        
+      } else {
+          let strTimer = `${Math.trunc(minutes)}:${seconds}`;
+          timerShow.innerHTML = strTimer;
+      }
+      --timeMinut;
+  }, 1000) 
+      
+      
+    
+
+   
+    var elem = document.getElementById('total'), num = +elem.innerHTML;
+    function addNum() {
+        num++;
+      elem.innerHTML = num;}
+
+    
+      
+
+
+    </script>
+   
+    
   </body>
- <script> 
-  let phrases = [
-    "ПАРНИ НУ ВЫ ЧЕГО!",
-    "Ух я щас хуёв навтыкаю.",
-    "Сделай фото.",
-    "ДД!",
-    "А кто такой Кочетов?",
-    "Какая фамилия у Кузовникова?", 
-    "ТАААЧКААА",
-    "Ну вот представь ты тачку себе купил, а там что-то не работает…",
-    "Вот будет у тебя свой бизнесс.",
-    "ПАРНИ!",
-    "*Шутка про горшок*",
-    "Это же ВИП!!!!",
-    "Удели 10 минут своего драгоценного времени.",
-    "Сделаем, сегодня!",
-    "Мы команда!",
-    "Держим планку.",
-    "А сколько калорий в курице?..",
-    "КТО ТАКОЙ КОЧЕТОВ???",
-    "Алкоголь - это как секс, 1 раз попробовал и уже тяжело отказаться.",
-    "Возьми в работу.",
-    "Чиркани мне все это письмом",
-    "Мне нравится как ты кроссируешь.",
-    "Я хочу видеть твои губы…",
-    "Если я прошу - надо сделать без лишних вопросов.",
-    "Развели тут пиздежь!",
-    "А где Кирилл?",
-    "Много не пейте",
-    "Николай, как работается?",
-    "Приглашалку закинул.",
-    "А давайте вы будете работать на час больше.",
-    "Бизнес должен видеть что мы работаем",
-    "Владику позвони.",
-    "Кроме тебя это никто лучше не сделает.",
-    "Сколько времени тебе надо, чтобы ответить сколько времени тебе надо...",
-    "Сколько времени тебе надо?",
-    "Вы мне нормально можете объяснить??",
-    "Автомастерская, слушаю вас!",
-    "Нам это даже выгодно",
-    "Чудес не бывает, копайте дальше",
-    "Напомни мне что там по заявке №?",
-    "На тесты возьму.",
-    "Кто в теме?",
-    "Набери мне срочно!",
-    "Ждем расопряжения сверху",
-    "Я постоянно пингую по этой теме",
-    "Вопрос очень срочный!",
-    "Мне Плетнёва набрать??!",
-
-  ]
-</script>
 </html>
