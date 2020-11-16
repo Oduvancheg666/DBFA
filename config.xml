@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="itd" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Nyam Nyam Cooking</name>
+    <name>Dolphin's Brother</name>
    
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -10,7 +10,6 @@
     <preference name="SplashScreenDelay" value="3000" />  
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashMaintainAspectRatio" value="true" /> 
-    <allow-navigation href="https://*youtube.com/*"/>
     <icon src="icon.png" />
     <splash src="splash.png" />
     <access origin="*" />
